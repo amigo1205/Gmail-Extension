@@ -1,0 +1,61 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+   "content_security_policy": "frame-src 'self' https://www.cloudhq.net https://www.cloudhq.net; script-src 'self' https://www.cloudhq.net https://www.cloudhq.net 'sha256-4Owfgr4YKLxuQlNu9nJe9gdriYc1qajVYToKgP/IAtY='; object-src 'self' https://www.cloudhq.net https://www.cloudhq.net; ",
+   "web_accessible_resources":[
+      "javascripts/*",
+      "html/*",
+      "stylesheets/*"
+   ],
+   "name":"Gmail Snooze and Schedule",
+   "short_name": "Gmail Snooze and Schedule",
+   "icons":{
+      "128":"icons/icon-128x128.png",
+      "48":"icons/icon-48x48.png"
+   },
+   "converted_from_user_script":true,
+
+   "background": {
+      "persistent": true,
+      "scripts": [ "javascripts/background.js"]
+   },
+
+   "content_scripts":[
+      {
+         "exclude_globs":[
+
+         ],
+         "css":[
+            "stylesheets/jquery-ui-1.9.2.custom.min.css",
+            "stylesheets/jquery.dropdown.css",
+            "stylesheets/popover.css",
+            "stylesheets/file_browser.css",
+            "stylesheets/main.css",
+            "stylesheets/jquery.simple-dtpicker.css"
+         ],
+         "include_globs":[
+
+         ],
+         "js":[
+            "javascripts/inboxsdk.js",
+            "javascripts/main_loader.js",
+            "javascripts/jquery-1.8.3.min.js",
+            "javascripts/jquery.simple-dtpicker.js"
+         ],
+         "matches":[ "http://*/*", "https://*/*"]
+      }
+   ],
+   "version":"1.1.0.16",
+   "description":"Email and label sharing plus real-time team collaboration and chat without ever leaving Gmail™",
+   "permissions":[
+      "storage",
+      "cookies",
+      "background",
+      "webRequest",
+      "webRequestBlocking",
+      "https://mail.google.com/",
+      "https://inbox.google.com/",
+      "https://www.cloudhq.net/"
+   ],
+   "manifest_version":2
+}
